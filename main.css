@@ -2906,6 +2906,11 @@ input[type="range"]::-moz-range-progress {
     .footer hr {
         margin-top: 55px;
     }
+
+    .form-modal__contaner {
+        animation: none;
+        transform: scale(1.3);
+    }
 }
 
 @media (max-width: 1200px) {

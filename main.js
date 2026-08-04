@@ -155,6 +155,10 @@ allTypeItems.forEach(item => {
 setActive('repair');
 
 function initScrollAnimation(selector, options = {}) {
+  if (window.innerWidth >= 2000) {
+    return;
+  }
+
   let {
     translateY = 60,
     duration = 0.5,
@@ -1145,19 +1149,21 @@ function renderProjects(currentProject, projectNumber) {
     mobileSliderLeft();
   });
 
-  let startX = 0;
+  if (window.innerWidth <= 1200) {
+    let startX = 0;
 
-  document.querySelector('.project-card__images').addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-  });
+    document.querySelector('.project-card__images').addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
 
-  document.querySelector('.project-card__images').addEventListener('touchend', (e) => {
-    const diff = startX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) mobileSliderRight();
-      else mobileSliderLeft();
-    }
-  });
+    document.querySelector('.project-card__images').addEventListener('touchend', (e) => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) mobileSliderRight();
+        else mobileSliderLeft();
+      }
+    });
+  }
 }
 
 let projects = [

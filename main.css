@@ -4057,6 +4057,11 @@ input[type="range"]::-moz-range-progress {
         transform: translateY(0.8vw);
     }
 
+    .header__nav .nav__list .nav__item {
+        font-size: 13px;
+        padding-bottom: 18px;
+    }
+
     .hero {
         margin-top: 47px;
     }
